@@ -1,99 +1,208 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио — Ткаченко Алиса Олеговна</title>
-    <style>
-        :root {
-            --blue: #1e4fff;
-            --gray-light: #f2f2f2;
-            --gray-dark: #444;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Электронное портфолио — Ткаченко Алиса</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f0f1f5;
+      color: #1f1f1f;
+      line-height: 1.75;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: var(--gray-light);
-            color: var(--gray-dark);
-        }
+    header {
+      background: #111827;
+      color: white;
+      padding: 80px 25px;
+      text-align: center;
+    }
 
-        header {
-            background: var(--blue);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    header h1 {
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 40px;
-        }
+    header h2 {
+      margin-top: 18px;
+      font-weight: 300;
+      font-size: 1.35rem;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
 
-        header p {
-            margin-top: 10px;
-            font-size: 18px;
-            opacity: 0.9;
-        }
+    header p {
+      color: #ffffff;
+      font-weight: 400;
+      margin-top: 10px;
+      font-size: 1.05rem;
+    }
 
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+    .container {
+      max-width: 960px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
 
-        h2 {
-            color: var(--blue);
-            border-left: 5px solid var(--blue);
-            padding-left: 10px;
-        }
+    section {
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e5e7eb;
+    }
 
-        .block {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
-        }
-    </style>
+    h3 {
+      margin-top: 0;
+      color: #111827;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+    }
+
+    .quote {
+      background: #111827;
+      color: #ffffff;
+      padding: 28px 32px;
+      border-radius: 16px;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 25px;
+      box-shadow: 0 6px 20px rgba(17,24,39,0.3);
+    }
+
+    p, li {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: #2a2a2a;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+
+    .contacts a {
+      color: #3743cc;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contacts a:hover {
+      text-decoration: underline;
+    }
+
+    /* Слайдер-карточки */
+    .slider-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding-bottom: 10px;
+      scroll-snap-type: x mandatory;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .slider-container::-webkit-scrollbar-thumb {
+      background: #3743cc;
+      border-radius: 4px;
+    }
+
+    .card {
+      flex: 0 0 300px;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 25px;
+      font-size: 1rem;
+      font-weight: 300;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+      scroll-snap-align: start;
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 26px rgba(0,0,0,0.12);
+      border-color: #c7c9d1;
+    }
+
+    .card-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 12px;
+    }
+
+  </style>
 </head>
 <body>
+  <header>
+    <h1>Ткаченко Алиса Олеговна</h1>
+    <h2>Заведующая лабораторией педагогического технопарка «Кванториум им. К. Д. Ушинского»<br />Ассистент кафедры инновационных систем ИИТТО, РГПУ им. А. И. Герцена</h2>
+    <p>+7 (952) 117-38-81 | alisa.tkc@mail.ru </p>
+  </header>
 
-    <header>
-        <h1>Ткаченко Алиса Олеговна</h1>
-        <p>Портфолио — дизайнер / разработчик / творческий специалист</p>
-    </header>
+  <div class="container">
 
     <section>
-        <h2>Обо мне</h2>
-        <div class="block">
-            <p>Здесь можно написать краткое описание о себе.</p>
-        </div>
+      <h3>О себе / Моя философия работы</h3>
+      <div class="quote">«Учитель живёт до тех пор, пока учится; как только он перестаёт учиться, в нём умирает учитель». — К. Д. Ушинский</div>
+      <p>Работаю на стыке образования и цифровых технологий. Опыт включает преподавание, управление проектами, разработку образовательных продуктов и проведение мастер-классов. Фокус на IT, дизайне, 3D-моделировании и UX/UI, участие в международных инициативах и практических проектах.</p>
     </section>
 
     <section>
-        <h2>Навыки</h2>
-        <div class="block">
-            <!-- Пустой блок → позже добавите список навыков -->
-            <p>(Список навыков будет здесь)</p>
-        </div>
+      <h3>Документы и достижения</h3>
+      <ul>
+        <li>Диплом о высшем образовании (педагогическое, факультет математики)</li>
+        <li>Почётные грамоты и благодарности от территориального комитета профсоюза работников образования</li>
+        <li>Благодарности от Института и Академии талантов</li>
+        <li>Участие в международных проектах, грантах и мастер-классах</li>
+      </ul>
     </section>
 
     <section>
-        <h2>Проекты</h2>
-        <div class="block">
-            <!-- Пустой блок для карточек проектов -->
-            <p>(Ваши проекты будут здесь)</p>
-        </div>
+      <h3>Проекты и опыт</h3>
+      <div class="slider-container">
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/code.png"/><p>Разработка и сопровождение учебных программ по направлению «Информационные технологии в дизайне»</p></div>
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/statistics.png"/><p>Коробочный образовательный продукт «Вероятность и статистика»</p></div>
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/physics.png"/><p>Образовательный комплект «Живая аэродинамика»</p></div>
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/design.png"/><p>UX/UI-дизайн макета для университетского проекта «Открытый кампус»</p></div>
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/presentation.png"/><p>Фирменный стиль для международных конференций</p></div>
+        <div class="card"><img class="card-icon" src="https://img.icons8.com/color/48/000000/camera.png"/><p>Фотограмметрия и 3D-моделирование (Metashape, Компас-3D)</p></div>
+      </div>
     </section>
 
     <section>
-        <h2>Контакты</h2>
-        <div class="block">
-            <!-- Пустой блок → контакты / соцсети -->
-            <p>(Контактная информация будет здесь)</p>
-        </div>
+      <h3>Компетенции и навыки</h3>
+      <p><strong>Профессиональные навыки:</strong> UX/UI-дизайн, 3D-моделирование, фотограмметрия, разработка образовательных продуктов, работа с ЧПУ-оборудованием, навыки госзакупок (44-ФЗ, 223-ФЗ), базовые веб-технологии (HTML, CSS)</p>
+      <p><strong>Программное обеспечение:</strong> Adobe Creative Suite, Figma, CorelDRAW, Компас-3D, Agisoft Metashape</p>
+      <p><strong>Личные качества:</strong> дисциплинированность, организованность, многозадачность, критическое мышление, коммуникабельность, опыт работы с руководителями высокого уровня</p>
     </section>
 
+    <section>
+      <h3>Сильные стороны и развитие</h3>
+      <p>Стрессоустойчивость, внимание к деталям и способность выстраивать системные решения.</p>
+      <div class="quote"><strong>Профессиональный интерес:</strong> сосредоточен на развитии образования и цифровых проектов. Разработке образовательных программ, проведения мастер-классов и проектной деятельности, осуществлнии участия в совершенствовании образовательной инфраструктуры.</div>
+    </section>
+
+    <section class="contacts">
+      <h3>Контакты и цифровое пространство</h3>
+      <p>Telegram: <a href="https://t.me/alisatkc">@alisatkc</a></p>
+      <p>VK: <a href="https://vk.com/alisatkc">vk.com/alisatkc</a></p>
+      <p>Электронная почта: alisa.tkc@mail.ru</p>
+    </section>
+
+  </div>
 </body>
 </html>
